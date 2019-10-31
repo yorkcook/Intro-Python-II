@@ -40,8 +40,8 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 
-playa = Player(1, room['outside'])
-print(playa)
+playaaaa = Player('York', room['outside'])
+print(playaaaa)
 
 # Write a loop that:
 #
@@ -53,3 +53,35 @@ print(playa)
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+while True:
+    print(playaaaa.current_room.name)
+    print(playaaaa.current_room.description)
+
+    order = input("Enter where you want to go yoooooo: ")
+
+    if order == 'n':
+        if playaaaa.current_room.n_to is None: 
+            print("No, no, no you can not go that way!") 
+        else:
+           playaaaa.current_room = playaaaa.current_room.n_to
+    elif order == 'e':
+        if playaaaa.current_room.e_to is None: 
+            print("No, no, no you can not go that way!") 
+        else:
+           playaaaa.current_room = playaaaa.current_room.e_to
+    elif order == 's':
+        if playaaaa.current_room.s_to is None: 
+            print("No, no, no you can not go that way!") 
+        else:
+           playaaaa.current_room = playaaaa.current_room.s_to
+    elif order == 'w':
+        if playaaaa.current_room.w_to is None: 
+            print("No, no, no you can not go that way!") 
+        else:
+           playaaaa.current_room = playaaaa.current_room.w_to
+    elif order == 'q':
+        print('You are a loser, good byeee!')
+        exit()
+    else:
+        print("What are you crazy?! You can not move in that direction!!")
